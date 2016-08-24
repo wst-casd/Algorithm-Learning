@@ -12,9 +12,8 @@ void InsertSort( int *arr, int length )
             if( arr[i] < arr[i-1] )
             {
                 pivotkey = arr[i];
-                arr[i] = arr[i-1];
 
-                for ( j = i-2; j >= 0 && arr[j] > pivotkey ; --j )
+                for ( j = i-1; j >= 0 && arr[j] > pivotkey ; --j )
                     arr[j+1] = arr[j];
 
                 arr[j+1] = pivotkey;
