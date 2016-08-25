@@ -1,3 +1,4 @@
+#include<stdio.h>
 
 //Bubble Sort with a flag to indicate that whethor or not the exchange happened in last turn
 void BubbleSort( int *arr, int length )
@@ -77,4 +78,19 @@ void BiBubbleSort( int *arr, int length )
 
         low = pos;
     }
+}
+
+int main()
+{
+    //int a[] = { 49, 38, 65, 97, 76, 13, 27, 49, 55, 4 };
+    int a[] = { 49, 45 };
+
+    int len = sizeof(a)/sizeof(int);
+    BiBubbleSort( a, len );
+
+    for (int i = 0; i < len; ++i)
+        printf("%d ", a[i]);
+
+    printf("\n");
+    return 0;
 }
