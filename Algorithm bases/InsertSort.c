@@ -22,7 +22,7 @@ void InsertSort( int *arr, int length )
     } 
 }
 
-//Binary insertion Sort
+//insertion Sort  bu binary search
 void BInsertSort( int *arr, int length )
 {
     if( length <= 1 )
