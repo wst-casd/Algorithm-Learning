@@ -13,9 +13,9 @@ void HeapAdjust(int *arr, int s, int length)
 {
     int tmp, child;
 
-    for ( tmp = arr[s], child = 2*s+1;  child <= length; child = 2*child +1 )
+    for ( tmp = arr[s], child = 2*s+1;  child <= length-1; child = 2*child +1 )
     {
-        if( child != length && arr[child+1] > arr[child] )
+        if( child != length-1 && arr[child+1] > arr[child] )
             ++child;
 
         if( tmp >= arr[child] )
@@ -35,13 +35,13 @@ void HeapSort( int *arr, int length )
 
     //build heap
     for (int i = (length >> 1) - 1; i >= 0; --i)
-        HeapAdjust(arr, i, length-1);
+        HeapAdjust(arr, i, length);
 
     //adjust the heap
     for (int j = length-1; j > 0; --j)
     {
         Swap(&arr[0], &arr[j]);
-        HeapAdjust(arr, 0, j-1);
+        HeapAdjust(arr, 0, j);
     }
 }
 
