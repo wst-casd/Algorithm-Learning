@@ -2,7 +2,7 @@
 // Insertion Sort
 void InsertSort( int *arr, int length )
 {
-    if( length <= 1 )
+    if( NULL == arr || length <= 1 )
         return;
     else{
         int pivotkey, j;
@@ -25,7 +25,7 @@ void InsertSort( int *arr, int length )
 //insertion Sort  bu binary search
 void BInsertSort( int *arr, int length )
 {
-    if( length <= 1 )
+    if( NULL == arr || length <= 1 )
         return;
     else{
         int low, high, mid, pivotkey;
