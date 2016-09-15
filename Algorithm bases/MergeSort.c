@@ -18,6 +18,9 @@ void Merge( int *arr, int* tempArr, int left, int mid, int right )
 
 void MergeSort( int *arr, int *tempArr, int left, int right )
 {
+    if( NULL == arr )
+        return;
+    
     int mid;
     if ( left < right )
     {
