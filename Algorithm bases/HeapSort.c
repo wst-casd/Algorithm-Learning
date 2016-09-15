@@ -9,13 +9,13 @@ void Swap( int *varA, int *varB )
 }
 
 //the procedure of adjust for MaxHeap
-void HeapAdjust(int *arr, int s, int m)
+void HeapAdjust(int *arr, int s, int length)
 {
     int tmp, child;
 
-    for ( tmp = arr[s], child = 2*s+1;  child <= m; child = 2*child +1 )
+    for ( tmp = arr[s], child = 2*s+1;  child <= length; child = 2*child +1 )
     {
-        if( child != m && arr[child+1] > arr[child] )
+        if( child != length && arr[child+1] > arr[child] )
             ++child;
 
         if( tmp >= arr[child] )
@@ -30,6 +30,9 @@ void HeapAdjust(int *arr, int s, int m)
 
 void HeapSort( int *arr, int length )
 {
+    if( NULL == arr )
+        return;
+
     //build heap
     for (int i = (length >> 1) - 1; i >= 0; --i)
         HeapAdjust(arr, i, length-1);
