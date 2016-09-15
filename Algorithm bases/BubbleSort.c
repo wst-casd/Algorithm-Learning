@@ -24,12 +24,12 @@ void BubbleSort( int *arr, int length )
 //Bubble Sort with recording the final exchanging position in last turn
 void BubbleSort_1( int *arr, int length )
 {
-    int tmp, flag = length-1, iter;
+    int tmp, pos = length-1, iter;
 
-    while( flag > 0 )
+    while( pos > 0 )
     {
-        iter = flag;
-        flag = 0;
+        iter = pos;
+        pos = 0;
         for (int i = 1; i <= iter; ++i)
         {
             if (arr[i] < arr[i-1])
@@ -37,7 +37,7 @@ void BubbleSort_1( int *arr, int length )
                 tmp      = arr[i];
                 arr[i]     = arr[i-1];
                 arr[i-1] =  tmp;
-                flag = i-1;
+                pos = i-1;
             }
         }
     }
@@ -53,6 +53,7 @@ void BiBubbleSort( int *arr, int length )
     {
         for (int i = low; i < high; ++i)
         {
+            pos = low;
             if (arr[i+1] < arr[i])
             {
                 tmp       = arr[i+1];
@@ -66,6 +67,7 @@ void BiBubbleSort( int *arr, int length )
 
         for (int j = high; j > low; --j)
         {
+            pos = high;
             if (arr[j] < arr[j-1])
             {
                 tmp      = arr[j];
