@@ -41,6 +41,9 @@ void BubbleSort_1( int *arr, int length )
 //Binary search Bubble Sort
 void BiBubbleSort( int *arr, int length )
 {
+    if( NULL == arr )
+        return;
+    
     int low = 0, high = length-1, tmp, pos;
 
     while( low < high ){
